@@ -35,11 +35,12 @@ O modelo segue a estrutura clássica proposta em 1998, composta por:
 ## 📁 Estrutura do Repositório
 
 ```text
-├── data/               # Diretório para o dataset MNIST
-├── notebooks/          # Notebooks de estudo e implementação
-│   └── lenet5_mnist.ipynb
-├── models/             # Pesos do modelo treinado (se aplicável)
-├── requirements.txt    # Dependências do projeto
+├── data/               # Diretório para o dataset MNIST (baixado automaticamente)
+├── weights/            # Pesos do modelo treinado (.pth)
+├── lenet5.ipynb        # Notebook principal com a implementação e treinamento
+├── main.py             # Script de entrada (placeholder)
+├── pyproject.toml      # Configuração de dependências e metadados do projeto
+├── uv.lock             # Lockfile do gerenciador de pacotes uv
 └── README.md           # Documentação do projeto
 ```
 
@@ -59,11 +60,13 @@ O modelo segue a estrutura clássica proposta em 1998, composta por:
 
 3. **Instale as dependências:**
    ```bash
-   pip install -r requirements.txt
+   pip install ipykernel torch torchvision matplotlib numpy
+   # Ou se estiver usando uv:
+   uv sync
    ```
 
 4. **Execute o notebook:**
-   Abra o arquivo `notebooks/lenet5_mnist.ipynb` no seu editor ou via `jupyter notebook`.
+   Abra o arquivo `lenet5.ipynb` no seu editor ou via `jupyter notebook`.
 
 ## 🎓 Créditos
 
