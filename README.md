@@ -142,4 +142,4 @@ Uma interface web moderna construída com **FastHTML** para processamento de ges
 Projeto realizado durante o evento **NLW Operator** da @Rocketseat, sob a instrução de @Arthur Kamienski.
 
 ---
-Desenvolvido por [Seu Nome](https://github.com/seu-usuario) 🚀
+Desenvolvido por [Davi Gomes Florencio](https://github.com/davigomesflorencio) 🚀
