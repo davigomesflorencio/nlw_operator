@@ -1,4 +1,10 @@
-# Fundamentos de Visão Computacional com LeNet-5
+<div>
+<img src="./assets/photo.png" alt="drawing" style="width:auto;"/>
+</div>
+
+# NLW Operator 2026
+
+## Fundamentos de Visão Computacional com LeNet-5
 
 Este projeto foi desenvolvido durante o **NLW Operator (Trilha Python)** da Rocketseat. O objetivo principal é explorar os fundamentos da visão computacional e do aprendizado profundo através da implementação e treinamento da arquitetura clássica **LeNet-5** utilizando a biblioteca **PyTorch**.
 
