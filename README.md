@@ -35,12 +35,16 @@ O modelo segue a estrutura clássica proposta em 1998, composta por:
 ## 📁 Estrutura do Repositório
 
 ```text
+├── recognize_system/   # Sistema de reconhecimento de gestos customizado
+│   ├── collect_landmarks.py # Script para coleta de landmarks das mãos
+│   ├── train_model.py       # Script para treinar o classificador de gestos
+│   ├── webcam_recog.py      # Script para reconhecimento em tempo real via webcam
+│   └── gesture_recognizer.task # Modelo base do MediaPipe
 ├── data/               # Diretório para o dataset MNIST (baixado automaticamente)
 ├── weights/            # Pesos do modelo treinado (.pth)
-├── lenet5.ipynb        # Notebook principal com a implementação e treinamento
-├── main.py             # Script de entrada (placeholder)
-├── pyproject.toml      # Configuração de dependências e metadados do projeto
-├── uv.lock             # Lockfile do gerenciador de pacotes uv
+├── lenet5.ipynb        # Notebook principal (LeNet-5)
+├── pyproject.toml      # Configuração de dependências
+├── uv.lock             # Lockfile do uv
 └── README.md           # Documentação do projeto
 ```
 
@@ -67,6 +71,45 @@ O modelo segue a estrutura clássica proposta em 1998, composta por:
 
 4. **Execute o notebook:**
    Abra o arquivo `lenet5.ipynb` no seu editor ou via `jupyter notebook`.
+
+## 🖐️ Sistema de Reconhecimento de Gestos (recognize_system)
+
+Além da LeNet-5, o projeto inclui um sistema de reconhecimento de gestos customizado utilizando MediaPipe e Scikit-Learn.
+
+### 1. Coleta de Dados (`collect_landmarks.py`)
+Utilizado para capturar os pontos (landmarks) da mão e salvar em um CSV para treinamento.
+
+**Execução:**
+```bash
+python recognize_system/collect_landmarks.py --label NOME_DO_GESTO --output hand_landmarks_data.csv
+```
+
+**Parâmetros:**
+- `--label` (Obrigatório): O nome do gesto que você está coletando (ex: `joinha`, `pare`, `paz`).
+- `--output` (Opcional): O nome do arquivo CSV onde os dados serão salvos. Padrão: `hand_landmarks_data.csv`.
+
+**Controles durante a execução:**
+- `s`: Salva um único frame de landmarks.
+- `r`: Inicia/Para a gravação contínua de frames.
+- `q`: Fecha o programa.
+
+### 2. Treinamento do Modelo (`train_model.py`)
+Treina um classificador `RandomForest` com base nos dados coletados.
+
+**Execução:**
+```bash
+python recognize_system/train_model.py
+```
+*Este script utiliza por padrão o arquivo `hand_landmarks_data.csv` e gera os arquivos `gesture_model.joblib` e `label_encoder.joblib`.*
+
+### 3. Reconhecimento em Tempo Real (`webcam_recog.py`)
+Carrega o modelo treinado e realiza a predição dos gestos via webcam.
+
+**Execução:**
+```bash
+python recognize_system/webcam_recog.py
+```
+*Certifique-se de que os arquivos `.joblib` e o `gesture_recognizer.task` estejam na pasta raiz do script.*
 
 ## 🎓 Créditos
 
