@@ -10,22 +10,25 @@ Este projeto foi desenvolvido durante o **NLW Operator (Trilha Python)** da Rock
 
 ## 🚀 Sobre o Projeto
 
-O projeto consiste na classificação de dígitos manuscritos utilizando o famoso dataset **MNIST**. Através deste desafio, aplicamos conceitos essenciais de Redes Neurais Convolucionais (CNNs), incluindo:
+Este repositório contém o desenvolvimento completo da trilha Python do **NLW Operator (2026)** da Rocketseat. O projeto evolui desde os fundamentos de Visão Computacional com modelos clássicos até a criação de uma aplicação web moderna e interativa.
 
-- Pré-processamento e carregamento de dados com `torchvision`.
-- Implementação detalhada da arquitetura LeNet-5 (Yann LeCun et al.).
-- Ciclo de treinamento e validação de modelos de Deep Learning.
-- Visualização de Mapas de Características (Feature Maps).
-- Análise de erros e métricas de desempenho.
+O projeto está dividido em três pilares principais:
+
+1.  **Fundamentos de Deep Learning**: Implementação e treinamento da rede neural **LeNet-5** para reconhecimento de dígitos manuscritos (MNIST) usando PyTorch.
+2.  **Sistema de Reconhecimento de Gestos**: Uma pipeline completa de Machine Learning que inclui a extração de landmarks (pontos da mão) com **MediaPipe**, coleta de dados e treinamento de um classificador **RandomForest** customizado.
+3.  **Rockit Vision (Aplicação Web)**: Um dashboard interativo construído com **FastHTML** que processa vídeo em tempo real via **WebSockets**, integrando os modelos de visão computacional em uma interface web de alta performance.
 
 ## 🛠 Tecnologias Utilizadas
 
-- **Python**: Linguagem base para o desenvolvimento.
-- **PyTorch**: Framework de Deep Learning para construção e treinamento do modelo.
-- **Torchvision**: Utilizado para manipulação de datasets e transformações de imagem.
-- **Matplotlib**: Para visualização de dados e resultados.
-- **NumPy**: Para operações matemáticas e manipulação de arrays.
-- **Jupyter Notebook**: Ambiente para experimentação e documentação.
+- **Python 3.13+**: Linguagem principal do ecossistema.
+- **PyTorch & Torchvision**: Construção, treinamento e avaliação de Redes Neurais Convolucionais.
+- **MediaPipe**: Framework para extração de landmarks de mãos em tempo real.
+- **FastHTML**: Framework moderno para criação de aplicações web rápidas em Python.
+- **Scikit-Learn**: Treinamento do classificador de gestos customizados (Random Forest).
+- **OpenCV**: Manipulação de imagens e fluxos de vídeo.
+- **WebSockets**: Comunicação de baixa latência para o feed da webcam.
+- **UV**: Gerenciador de pacotes e ambientes Python ultrarrápido.
+- **Jupyter Notebook**: Documentação técnica e experimentação de modelos.
 
 ## 🏗 Arquitetura LeNet-5
 
