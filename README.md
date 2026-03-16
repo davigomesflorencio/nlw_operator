@@ -35,17 +35,20 @@ O modelo segue a estrutura clássica proposta em 1998, composta por:
 ## 📁 Estrutura do Repositório
 
 ```text
-├── recognize_system/   # Sistema de reconhecimento de gestos customizado
-│   ├── collect_landmarks.py # Script para coleta de landmarks das mãos
-│   ├── train_model.py       # Script para treinar o classificador de gestos
-│   ├── webcam_recog.py      # Script para reconhecimento em tempo real via webcam
-│   └── gesture_recognizer.task # Modelo base do MediaPipe
-├── data/               # Diretório para o dataset MNIST (baixado automaticamente)
-├── weights/            # Pesos do modelo treinado (.pth)
-├── lenet5.ipynb        # Notebook principal (LeNet-5)
+├── computer_vision_app/ # Aplicação Web (FastHTML) - Rockit Vision
+│   ├── app.py           # Entrada principal do servidor web
+│   ├── core/            # Lógica de processamento e utilitários
+│   └── models/          # Modelos de ML carregados pelo app
+├── recognize_system/   # Scripts de utilidade para o sistema
+│   ├── collect_landmarks.py # Coleta de dados
+│   ├── train_model.py       # Treinamento do modelo
+│   └── webcam_recog.py      # Reconhecimento simples via terminal
+├── data/               # Dataset MNIST
+├── weights/            # Pesos LeNet-5
+├── lenet5.ipynb        # Notebook LeNet-5
 ├── pyproject.toml      # Configuração de dependências
 ├── uv.lock             # Lockfile do uv
-└── README.md           # Documentação do projeto
+└── README.md           # Documentação
 ```
 
 ## 🔧 Como Executar
@@ -110,6 +113,29 @@ Carrega o modelo treinado e realiza a predição dos gestos via webcam.
 python recognize_system/webcam_recog.py
 ```
 *Certifique-se de que os arquivos `.joblib` e o `gesture_recognizer.task` estejam na pasta raiz do script.*
+
+## 🚀 Rockit Vision — Web App (`computer_vision_app`)
+
+Uma interface web moderna construída com **FastHTML** para processamento de gestos em tempo real via WebSockets.
+
+### ✨ Funcionalidades
+- **Live Feed**: Transmissão de vídeo em tempo real via WebSocket.
+- **Controle de Qualidade**: Slider para ajustar a compressão da imagem enviada.
+- **Visual Feedback**: Opção para desenhar landmarks diretamente no canvas.
+- **Predição Dupla**: Exibe ícones especiais quando o mesmo gesto é detectado em ambas as mãos.
+
+### 🛠️ Como Executar
+1. Navegue até a pasta do app:
+   ```bash
+   cd computer_vision_app
+   ```
+2. Inicie o servidor:
+   ```bash
+   python app.py
+     # Ou se estiver usando uv:
+   uv run app.py
+   ```
+3. Acesse `http://localhost:5001` (ou a porta indicada no terminal) no seu navegador.
 
 ## 🎓 Créditos
 
